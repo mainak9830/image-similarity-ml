@@ -1,0 +1,5 @@
+opencv_python==4.4.0.44
+matplotlib==3.3.2
+Flask==1.1.2
+Pyrebase==3.0.27
+deepface==0.0.49
