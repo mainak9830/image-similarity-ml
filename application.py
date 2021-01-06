@@ -1,6 +1,6 @@
 from flask import Flask,request,jsonify
 from demofirebase import *   #import the firebase config file
-from deepface import DeepFace
+#from deepface import DeepFace
 import cv2
 import matplotlib.pyplot as plt
 
@@ -16,6 +16,7 @@ emotions={'0' : 'angry','1' : 'disgust','2' : 'fear','3' : 'happy','4' : 'sad','
 @app.route('/',methods=['GET'])
 def hello_world():
     
+    result={}
     emotion=str(request.args['emotion'])
     #cloud and local path for image1  ----------------------------->Camera Image Uploaded 
     path_on_cloud_img1=str(request.args['cloudpath_img1'])
@@ -32,20 +33,21 @@ def hello_world():
     storage.child(path_on_cloud_img2).download(path_on_local_img2)
 
     #verify the two images are similar or not
-    result  = DeepFace.verify(path_on_local_img1,path_on_local_img2)
-
+    #result  = DeepFace.verify(path_on_local_img1,path_on_local_img2)
+    
+    result["verified"]=False
     result["emotion_verify"]=False
 
-    if(result["verified"]!=True):
-        return result
+    #if(result["verified"]!=True):
+     #   return result
 
     img=plt.imread('firebase_image/firebase1.jpg')
 
-    pred=DeepFace.analyze(img,actions=['emotion'])
+    #pred=DeepFace.analyze(img,actions=['emotion'])
 
 
-    if(pred['dominant_emotion'] == emotions[emotion]):
-        result["emotion_verify"]=True
+    #if(pred['dominant_emotion'] == emotions[emotion]):
+     #   result["emotion_verify"]=True
     
     
     return result
