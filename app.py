@@ -3,7 +3,6 @@ from flask import Flask,request,jsonify,render_template
 from demofirebase import *   #import the firebase config file
 #from deepface import DeepFace
 import matplotlib.pyplot as plt
-import cv2
 
 #test link 1--- http://127.0.0.1:5000/?cloudpath_img1=my_image/fear.jpg&cloudpath_img2=my_image/me0.jpeg&emotion=0
 #test link 2--- http://127.0.0.1:5000/?cloudpath_img1=my_image/me4.jpg&cloudpath_img2=my_image/me0.jpeg&emotion=3
