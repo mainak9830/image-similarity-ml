@@ -1,7 +1,8 @@
 from flask import Flask,request,jsonify,render_template
 
-
-
+from demofirebase import *   #import the firebase config file
+#from deepface import DeepFace
+import matplotlib.pyplot as plt
 
 
 #test link 1--- http://127.0.0.1:5000/?cloudpath_img1=my_image/fear.jpg&cloudpath_img2=my_image/me0.jpeg&emotion=0
@@ -24,10 +25,10 @@ def hello_world():
     path_on_local_img2="firebase_image/firebase2.jpg"
 
     #download the first image from cloud to local storage
-    #storage.child(path_on_cloud_img1).download(path_on_local_img1)
+    storage.child(path_on_cloud_img1).download(path_on_local_img1)
 
     #download the second image from cloud to local storage
-    #storage.child(path_on_cloud_img2).download(path_on_local_img2)
+    storage.child(path_on_cloud_img2).download(path_on_local_img2)
 
     #verify the two images are similar or not
     #result  = DeepFace.verify(path_on_local_img1,path_on_local_img2)
