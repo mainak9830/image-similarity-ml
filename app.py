@@ -39,7 +39,7 @@ def hello_world():
     #if(result["verified"]!=True):
      #   return result
 
-    #img=plt.imread('firebase_image/firebase1.jpg')
+    img=plt.imread('firebase_image/firebase1.jpg')
 
     #pred=DeepFace.analyze(img,actions=['emotion'])
 
