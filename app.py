@@ -46,7 +46,6 @@ def hello_world():
     #if(pred['dominant_emotion'] == emotions[emotion]):
      #   result["emotion_verify"]=True
     
-    result['img']=img
     return result
 
 @app.route("/home")
