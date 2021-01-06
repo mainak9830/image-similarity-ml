@@ -1,12 +1,9 @@
-try:
-    from flask import Flask,request,jsonify
-    from demofirebase import *   #import the firebase config file
-    from deepface import DeepFace
-    import cv2
-    import matplotlib.pyplot as plt
-except:
-    import os
-    os.system('pip install -r requirements.txt')
+from flask import Flask,request,jsonify
+from demofirebase import *   #import the firebase config file
+from deepface import DeepFace
+import cv2
+import matplotlib.pyplot as plt
+
 
 
 
@@ -53,6 +50,3 @@ def hello_world():
     
     return result
 
-if __name__ == "__main__":
-
-    app.run()
