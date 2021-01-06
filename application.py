@@ -1,4 +1,4 @@
-from flask import Flask,request,jsonify
+from flask import Flask,request,jsonify,render_template
 from demofirebase import *   #import the firebase config file
 #from deepface import DeepFace
 import cv2
@@ -51,4 +51,8 @@ def hello_world():
     
     
     return result
+
+@app.route("/home")
+def home():
+    return render_template("index.html")
 
